@@ -17,4 +17,8 @@ COPY mosek.lic /usr/local/lib/python3.8/dist-packages/mosek
 
 CMD ["jupyter","lab","--ip=0.0.0.0","--allow-root","--LabApp.token=''"]
 
-# docker run --rm -it -v ~/Docker/test/test03/ds_python:/new_dir <docker images> bash
+# This docker image is created for python users to optimize convex problems and has the minimum needed packages(numpy, matplotlib, cvxpy, cvxopt, mosek).
+# The Default command of this image is ["jupyter","lab"] (for jupyter users) .
+# ex) docker run --rm -it -p 8888:8888 -v ~/host/path/to/file/or/directory:/new_dir yugaro/opt-python
+# If you want to plot your data with your host GUI, you shuold use command ["bash"] and open XQuratz (for Mac users).
+# ex) docker run --rm -it -v ~/host/path/to/file/or/directory:/new_dir yugaro/opt-python bash
